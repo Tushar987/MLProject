@@ -8,3 +8,5 @@ Setting up the VirtualEnv
 => source venv/bin/activate
 => pip3 install --upgrade -r requirements.txt
 
+
+
