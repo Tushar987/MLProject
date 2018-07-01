@@ -1,1 +1,1 @@
-web: gunicorn django-jquery-file-upload.wsgi --log-file -
+web: gunicorn finalYearProject.wsgi --log-file -
