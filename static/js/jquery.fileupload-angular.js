@@ -326,7 +326,7 @@
                     'fileuploadprocessalways',
                     'fileuploadprocessstop'
                 ].join(' '), function (e, data) {
-                    $scope.$parent.$applyAsync(function () {
+                    $scope.$parent.$apply(function () {
                         if ($scope.$emit(e.type, data).defaultPrevented) {
                             e.preventDefault();
                         }
