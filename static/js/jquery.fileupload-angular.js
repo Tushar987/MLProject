@@ -101,7 +101,8 @@
                     angular.forEach(data.files, function (file) {
                         filesCopy.push(file);
                     });
-                    scope.$parent.$applyAsync(function () {
+					//scope.$parent.$applyAsync(function () {
+                    scope.$parent.$apply(function () {
                         addFileMethods(scope, data);
                         var method = scope.option('prependFiles') ?
                                 'unshift' : 'push';
@@ -110,7 +111,8 @@
                     data.process(function () {
                         return scope.process(data);
                     }).always(function () {
-                        scope.$parent.$applyAsync(function () {
+                      //  scope.$parent.$applyAsync(function () {
+			scope.$parent.$apply(function () {
                             addFileMethods(scope, data);
                             scope.replace(filesCopy, data.files);
                         });
@@ -326,6 +328,7 @@
                     'fileuploadprocessalways',
                     'fileuploadprocessstop'
                 ].join(' '), function (e, data) {
+					//$scope.$parent.$applyAsync(function () {
                     $scope.$parent.$apply(function () {
                         if ($scope.$emit(e.type, data).defaultPrevented) {
                             e.preventDefault();
